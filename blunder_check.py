@@ -19,7 +19,7 @@ for move in pgn_game.mainline_moves():
     result = engine.analysis(board, chess.engine.Limit(time=1.0))
 
     # Get the engine's suggested best move for the current position
-    best_move = result.get("pv")[0]
+    best_move = result.get
 
     # Compare the engine's best move to the actual move played
     if move != best_move:
