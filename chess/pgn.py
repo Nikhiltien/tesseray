@@ -420,7 +420,7 @@ class GameNode(abc.ABC):
                 # who has been mated.
                 return chess.engine.PovScore(score, turn)
         else:
-            score = chess.engine.Cp(int(float(match.group("cp")) * 100))
+            score = chess.engine.Cp(round(float(match.group("cp")) * 100))
 
         return chess.engine.PovScore(score if turn else -score, turn)
 
@@ -810,11 +810,11 @@ class Game(GameNode):
             fen = setup.fen()
 
         if fen == type(setup).starting_fen:
-            self.headers.pop("SetUp", None)
             self.headers.pop("FEN", None)
+            self.headers.pop("SetUp", None)
         else:
-            self.headers["SetUp"] = "1"
             self.headers["FEN"] = fen
+            self.headers["SetUp"] = "1"
 
         if type(setup).aliases[0] == "Standard" and setup.chess960:
             self.headers["Variant"] = "Chess960"
@@ -872,12 +872,13 @@ class Game(GameNode):
         return GameBuilder(Game=cls)
 
     def __repr__(self) -> str:
-        return "<{} at {:#x} ({!r} vs. {!r}, {!r}{})>".format(
+        return "<{} at {:#x} ({!r} vs. {!r}, {!r} at {!r}{})>".format(
             type(self).__name__,
             id(self),
             self.headers.get("White", "?"),
             self.headers.get("Black", "?"),
             self.headers.get("Date", "????.??.??"),
+            self.headers.get("Site", "?"),
             f", {len(self.errors)} errors" if self.errors else "")
 
 
@@ -957,7 +958,7 @@ class Headers(MutableMapping[str, str]):
             if key in self._tag_roster:
                 yield key
 
-        yield from sorted(self._others)
+        yield from self._others
 
     def __len__(self) -> int:
         return len(self._tag_roster) + len(self._others)
@@ -1040,6 +1041,13 @@ class BaseVisitor(abc.ABC, Generic[ResultT]):
 
     def end_headers(self) -> Optional[SkipType]:
         """Called after visiting game headers."""
+        pass
+
+    def begin_parse_san(self, board: chess.Board, san: str) -> Optional[SkipType]:
+        """
+        When the visitor is used by a parser, this is called at the start of
+        each standard algebraic notation detailing a move.
+        """
         pass
 
     def parse_san(self, board: chess.Board, san: str) -> chess.Move:
@@ -1202,7 +1210,7 @@ class GameBuilder(BaseVisitor[GameT]):
         >>>
         >>> game = chess.pgn.read_game(pgn, Visitor=MyGameBuilder)
         """
-        LOGGER.exception("error during pgn parsing")
+        LOGGER.error("%s while parsing %r", error, self.game)
         self.game.errors.append(error)
 
     def result(self) -> GameT:
@@ -1681,14 +1689,15 @@ def read_game(handle: TextIO, *, Visitor: Any = GameBuilder) -> Any:
                 visitor.visit_result(token)
             else:
                 # Parse SAN tokens.
-                try:
-                    move = visitor.parse_san(board_stack[-1], token)
-                except ValueError as error:
-                    visitor.handle_error(error)
-                    skip_variation_depth = 1
-                else:
-                    visitor.visit_move(board_stack[-1], move)
-                    board_stack[-1].push(move)
+                if visitor.begin_parse_san(board_stack[-1], token) is not SKIP:
+                    try:
+                        move = visitor.parse_san(board_stack[-1], token)
+                    except ValueError as error:
+                        visitor.handle_error(error)
+                        skip_variation_depth = 1
+                    else:
+                        visitor.visit_move(board_stack[-1], move)
+                        board_stack[-1].push(move)
                 visitor.visit_board(board_stack[-1])
 
         if fresh_line:

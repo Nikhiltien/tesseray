@@ -218,9 +218,33 @@ def square_rank(square: Square) -> int:
 
 def square_distance(a: Square, b: Square) -> int:
     """
-    Gets the distance (i.e., the number of king steps) from square *a* to *b*.
+    Gets the Chebyshev distance (i.e., the number of king steps) from square *a* to *b*.
     """
     return max(abs(square_file(a) - square_file(b)), abs(square_rank(a) - square_rank(b)))
+
+def square_manhattan_distance(a: Square, b: Square) -> int:
+    """
+    Gets the Manhattan/Taxicab distance (i.e., the number of orthogonal king steps) from square *a* to *b*.
+    """
+    return abs(square_file(a) - square_file(b)) + abs(square_rank(a) - square_rank(b))
+
+def square_knight_distance(a: Square, b: Square) -> int:
+    """
+    Gets the Knight distance (i.e., the number of knight moves) from square *a* to *b*.
+    """
+    dx = abs(square_file(a) - square_file(b))
+    dy = abs(square_rank(a) - square_rank(b))
+
+    if dx + dy == 1:
+        return 3
+    elif dx == dy == 2:
+        return 4
+    elif dx == dy == 1:
+        if BB_SQUARES[a] & BB_CORNERS or BB_SQUARES[b] & BB_CORNERS: # Special case only for corner squares
+            return 4
+
+    m = math.ceil(max(dx / 2, dy / 2, (dx + dy) / 3))
+    return m + ((m + dx + dy) % 2)
 
 def square_mirror(square: Square) -> Square:
     """Mirrors the square vertically."""
@@ -2987,9 +3011,10 @@ class Board(BaseBoard):
 
         :raises:
             :exc:`ValueError` (specifically an exception specified below) if the SAN is invalid, illegal or ambiguous.
-                - :exc:`InvalidMoveError` if the SAN is syntactically invalid.
-                - :exc:`IllegalMoveError` if the SAN is illegal.
-                - :exc:`AmbiguousMoveError` if the SAN is ambiguous.
+
+            - :exc:`InvalidMoveError` if the SAN is syntactically invalid.
+            - :exc:`IllegalMoveError` if the SAN is illegal.
+            - :exc:`AmbiguousMoveError` if the SAN is ambiguous.
         """
         # Castling.
         try:
@@ -3072,9 +3097,10 @@ class Board(BaseBoard):
 
         :raises:
             :exc:`ValueError` (specifically an exception specified below) if neither legal nor a null move.
-                - :exc:`InvalidMoveError` if the SAN is syntactically invalid.
-                - :exc:`IllegalMoveError` if the SAN is illegal.
-                - :exc:`AmbiguousMoveError` if the SAN is ambiguous.
+
+            - :exc:`InvalidMoveError` if the SAN is syntactically invalid.
+            - :exc:`IllegalMoveError` if the SAN is illegal.
+            - :exc:`AmbiguousMoveError` if the SAN is ambiguous.
         """
         move = self.parse_san(san)
         self.push(move)
@@ -3105,8 +3131,9 @@ class Board(BaseBoard):
         :raises:
             :exc:`ValueError` (specifically an exception specified below) if the move is invalid or illegal in the
             current position (but not a null move).
-                - :exc:`InvalidMoveError` if the UCI is syntactically invalid.
-                - :exc:`IllegalMoveError` if the UCI is illegal.
+
+            - :exc:`InvalidMoveError` if the UCI is syntactically invalid.
+            - :exc:`IllegalMoveError` if the UCI is illegal.
         """
         move = Move.from_uci(uci)
 
@@ -3130,8 +3157,9 @@ class Board(BaseBoard):
         :raises:
             :exc:`ValueError` (specifically an exception specified below) if the move is invalid or illegal in the
             current position (but not a null move).
-                - :exc:`InvalidMoveError` if the UCI is syntactically invalid.
-                - :exc:`IllegalMoveError` if the UCI is illegal.
+
+            - :exc:`InvalidMoveError` if the UCI is syntactically invalid.
+            - :exc:`IllegalMoveError` if the UCI is illegal.
         """
         move = self.parse_uci(uci)
         self.push(move)
