@@ -4,4 +4,5 @@ venv
 .DS_Store
 __pycache__
 venv/lib
+tesseray/logs/blunder_analysis.log
 tesseray/blunder_analysis.log
