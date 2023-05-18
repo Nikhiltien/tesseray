@@ -1,0 +1,565 @@
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 34. Re1, best move was: Qe1
+Total blunders in game: 1
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 26. Nb4, best move was: Qxb5
+A blunder occurred on move: 37. Re2, best move was: Nc6
+A blunder occurred on move: 53. ...Rc1+, best move was: Rc6
+A blunder occurred on move: 57. ...Rb1, best move was: Rg2+
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 21. Qh7+, best move was: Nd4
+A blunder occurred on move: 23. ...Ne5, best move was: a4
+A blunder occurred on move: 34. ...Qd4, best move was: Qxe6
+A blunder occurred on move: 34. Qh7+, best move was: Qxg6+
+A blunder occurred on move: 35. ...Kf8, best move was: Qg7
+A blunder occurred on move: 35. Qe7+, best move was: Qe7+
+A blunder occurred on move: 36. ...Kg8, best move was: Kg8
+A blunder occurred on move: 36. Qxe8+, best move was: Qxe8+
+A blunder occurred on move: 37. ...Kh7, best move was: Kh7
+A blunder occurred on move: 37. Qxg6+, best move was: Qxg6+
+A blunder occurred on move: 38. ...Kh8, best move was: Kh8
+A blunder occurred on move: 38. Re8#, best move was: Re8#
+Total blunders in game: 12
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+Total blunders in game: 0
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 9. ...Be7, best move was: Ne6
+A blunder occurred on move: 25. Qf4, best move was: Bg2
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 12. e4, best move was: Qe2
+A blunder occurred on move: 13. ...Nxe4, best move was: Rb4
+A blunder occurred on move: 35. ...Qb2, best move was: Qc5
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+Total blunders in game: 0
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+Total blunders in game: 0
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 23. Ng4, best move was: Qc2
+A blunder occurred on move: 26. ...gxf6, best move was: Qxf6
+A blunder occurred on move: 28. ...Qd6, best move was: Bf5
+A blunder occurred on move: 29. Qxf6, best move was: Rxc2
+A blunder occurred on move: 35. ...Kg7, best move was: Rxe2
+Total blunders in game: 5
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 30. Qh3, best move was: Qg5
+A blunder occurred on move: 31. ...Rd8, best move was: g5
+A blunder occurred on move: 35. ...Qxd4+, best move was: Qxf4+
+A blunder occurred on move: 49. Re2, best move was: Kg5
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 33. ...Nd2, best move was: h5
+Total blunders in game: 1
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 17. Bh6, best move was: Nd2
+A blunder occurred on move: 28. Re6, best move was: Rhg1
+A blunder occurred on move: 29. ...N8d7, best move was: Nxe6
+A blunder occurred on move: 32. Rd2, best move was: Re1
+A blunder occurred on move: 33. ...Rxf5, best move was: Ne4
+A blunder occurred on move: 33. a3, best move was: Re2
+A blunder occurred on move: 34. ...h5, best move was: Ne4
+A blunder occurred on move: 34. b3, best move was: Rd1
+A blunder occurred on move: 35. ...h4, best move was: Ne4
+A blunder occurred on move: 35. a4, best move was: Rd3
+A blunder occurred on move: 37. ...h3, best move was: Ne4
+A blunder occurred on move: 37. f4, best move was: Kc2
+A blunder occurred on move: 38. ...Rxf4, best move was: Ne4
+A blunder occurred on move: 38. a5, best move was: Rh2
+A blunder occurred on move: 39. ...Ra4, best move was: Ne4
+A blunder occurred on move: 39. a6, best move was: Rh2
+A blunder occurred on move: 40. ...Kg7, best move was: Ne4
+A blunder occurred on move: 42. ...Rg3, best move was: Ra4
+A blunder occurred on move: 46. Kc2, best move was: Ka2
+A blunder occurred on move: 47. ...Rf1, best move was: h2
+Total blunders in game: 20
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 16. ...Ne5, best move was: Bxc3
+A blunder occurred on move: 20. Bd4, best move was: Bxe6
+A blunder occurred on move: 22. Qd3, best move was: f4
+A blunder occurred on move: 37. g4, best move was: g3
+A blunder occurred on move: 38. ...Be5, best move was: Qd1+
+A blunder occurred on move: 38. Kg1, best move was: g5+
+A blunder occurred on move: 39. ...Kg5, best move was: Bd4+
+A blunder occurred on move: 39. e7, best move was: h4+
+A blunder occurred on move: 40. ...Kh4, best move was: Bd4+
+A blunder occurred on move: 40. e8=Q, best move was: Rf6
+A blunder occurred on move: 41. ...Kg3, best move was: Bd4+
+A blunder occurred on move: 41. Qxe5+, best move was: Rf3+
+A blunder occurred on move: 42. ...dxe5, best move was: dxe5
+Total blunders in game: 13
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 30. ...Qh7, best move was: Bf5
+A blunder occurred on move: 30. dxc5, best move was: Rg5
+A blunder occurred on move: 38. Rh2, best move was: Kh2
+A blunder occurred on move: 45. ...Nd5, best move was: Qh6
+A blunder occurred on move: 60. ...Nf5, best move was: Rf6+
+A blunder occurred on move: 60. Kf2, best move was: Rxf5
+A blunder occurred on move: 66. Kf1, best move was: Kd1
+A blunder occurred on move: 67. ...Rd2, best move was: Ra2
+A blunder occurred on move: 67. Bxd2, best move was: Bd8
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 31. ...d4, best move was: Rxc5
+A blunder occurred on move: 33. ...Rd8, best move was: Nxd4
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 26. ...hxg4, best move was: Rxb1
+A blunder occurred on move: 33. ...g4, best move was: Nxd4
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 25. Bc4, best move was: Nxe7
+A blunder occurred on move: 26. ...Nxd5, best move was: Ng6
+A blunder occurred on move: 32. ...Qf7, best move was: Bf6
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 31. Qg2, best move was: Qe2
+A blunder occurred on move: 34. Re1, best move was: b5
+A blunder occurred on move: 36. ...Qg6, best move was: Rd8
+A blunder occurred on move: 37. ...Nd8, best move was: Qd6
+A blunder occurred on move: 42. ...Nd6, best move was: Nxb6
+A blunder occurred on move: 48. ...Re2, best move was: Rxd7
+A blunder occurred on move: 50. ...Ka8, best move was: Re7
+A blunder occurred on move: 51. ...Rb8, best move was: Ra5
+A blunder occurred on move: 51. Ra7+, best move was: Ra7+
+A blunder occurred on move: 52. ...Nxa7, best move was: Nxa7
+A blunder occurred on move: 52. Qxa7#, best move was: Qxa7#
+Total blunders in game: 11
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 11. ...d5, best move was: d6
+A blunder occurred on move: 26. ...Kg6, best move was: Rxb2
+A blunder occurred on move: 28. ...Rb3, best move was: h4
+A blunder occurred on move: 42. Bd4, best move was: Kd2
+A blunder occurred on move: 43. ...Re4, best move was: Rd3+
+A blunder occurred on move: 67. ...Re4, best move was: Kf3
+A blunder occurred on move: 70. Rb3, best move was: Rb3
+A blunder occurred on move: 71. ...g3, best move was: Kf2
+A blunder occurred on move: 71. Kf4, best move was: Rxg3+
+A blunder occurred on move: 72. ...Kh2, best move was: Kf1
+A blunder occurred on move: 72. Rb2+, best move was: Rxg3
+A blunder occurred on move: 73. ...Kh3, best move was: Kh3
+A blunder occurred on move: 73. Kf3, best move was: Rb3
+A blunder occurred on move: 74. ...g2, best move was: Kh4
+A blunder occurred on move: 74. Rxg2, best move was: Rxg2
+A blunder occurred on move: 75. ...Kh4, best move was: Kh4
+A blunder occurred on move: 75. Kf4, best move was: Kf4
+A blunder occurred on move: 76. ...Kh5, best move was: Kh3
+A blunder occurred on move: 76. Kf5, best move was: Kf5
+A blunder occurred on move: 77. ...Kh6, best move was: Kh6
+A blunder occurred on move: 77. Kf6, best move was: Rh2#
+A blunder occurred on move: 78. ...Kh5, best move was: Kh7
+A blunder occurred on move: 78. Kf5, best move was: Kf5
+A blunder occurred on move: 79. ...Kh4, best move was: Kh6
+A blunder occurred on move: 79. Rg3, best move was: Rh2#
+A blunder occurred on move: 80. ...Kh5, best move was: Kh5
+A blunder occurred on move: 80. Rh3#, best move was: Rh3#
+Total blunders in game: 27
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 23. Kc1, best move was: Ke2
+A blunder occurred on move: 37. Rc7+, best move was: Nh6+
+A blunder occurred on move: 38. ...Kf6, best move was: Ke6
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 28. Rfg4, best move was: Qg4
+A blunder occurred on move: 29. ...Rg8, best move was: c2
+A blunder occurred on move: 30. ...Qb6, best move was: Rgc8
+A blunder occurred on move: 30. h3, best move was: Bxg8
+A blunder occurred on move: 31. Kh2, best move was: Bxg8
+A blunder occurred on move: 32. ...Qd6, best move was: Qb2
+A blunder occurred on move: 32. Ng6+, best move was: a3
+A blunder occurred on move: 33. Bxg8, best move was: fxg6
+A blunder occurred on move: 34. Rxg7, best move was: Bh7
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 36. h3, best move was: Rd8+
+A blunder occurred on move: 43. Kg3, best move was: Ne8
+A blunder occurred on move: 46. g5, best move was: a7
+A blunder occurred on move: 47. Na8, best move was: a7
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 39. ...a4, best move was: c4
+A blunder occurred on move: 39. Ke3, best move was: f5+
+A blunder occurred on move: 42. ...c4, best move was: b3
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 17. Na4, best move was: Rf1
+A blunder occurred on move: 36. Rf8, best move was: Nxf6
+A blunder occurred on move: 37. ...Bd4, best move was: Bd4
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 28. Qe2, best move was: Qc1
+A blunder occurred on move: 30. ...Rxf1+, best move was: Rf5
+A blunder occurred on move: 31. ...Qd8, best move was: Qf6
+A blunder occurred on move: 36. ...h6, best move was: g6
+A blunder occurred on move: 36. Qh7#, best move was: Qh7#
+Total blunders in game: 5
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 22. Nf3, best move was: Ng2
+A blunder occurred on move: 23. ...Re8, best move was: Kf7
+A blunder occurred on move: 32. Re2, best move was: b6
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 16. Qd2, best move was: exf6
+A blunder occurred on move: 32. Ka2, best move was: Na5
+A blunder occurred on move: 34. Qe3, best move was: Qg3
+A blunder occurred on move: 36. Qg3, best move was: g4
+A blunder occurred on move: 37. ...Nf4, best move was: Qd4+
+A blunder occurred on move: 38. ...Nd3+, best move was: Qd4+
+A blunder occurred on move: 39. ...e4, best move was: Qb5
+A blunder occurred on move: 40. ...Bf7, best move was: Rb5
+A blunder occurred on move: 47. ...c4, best move was: Qf4
+A blunder occurred on move: 47. Re6+, best move was: Re6+
+Total blunders in game: 10
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+Total blunders in game: 0
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 42. ...Kh6, best move was: Bd5
+A blunder occurred on move: 42. Rg1, best move was: Ng8+
+A blunder occurred on move: 45. ...Rxe7, best move was: Bxf3
+A blunder occurred on move: 52. Reg6, best move was: Rxc6
+A blunder occurred on move: 55. Ra6, best move was: bxa5
+A blunder occurred on move: 57. ...a3, best move was: Kg6
+A blunder occurred on move: 58. ...Kf7, best move was: Kh8
+A blunder occurred on move: 63. a7, best move was: a7
+A blunder occurred on move: 65. Qd5, best move was: e6
+A blunder occurred on move: 66. e6, best move was: e6
+A blunder occurred on move: 69. ...Kb2, best move was: Kb1
+A blunder occurred on move: 69. Qe2+, best move was: Qe2+
+A blunder occurred on move: 70. ...Ka3, best move was: Ka1
+A blunder occurred on move: 70. Qda2#, best move was: Ra5#
+Total blunders in game: 14
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 21. Nxe8, best move was: Qa1
+A blunder occurred on move: 22. ...Qxd1+, best move was: Qxd1+
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 19. Bg3, best move was: g3
+A blunder occurred on move: 32. Rxf4, best move was: d5
+A blunder occurred on move: 35. ...Qxc3, best move was: Qxf4
+A blunder occurred on move: 37. ...c6, best move was: Rc8
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+Total blunders in game: 0
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 13. ...Nd5, best move was: Nf5
+A blunder occurred on move: 13. Bg5, best move was: Ng3
+A blunder occurred on move: 16. Bb1, best move was: Nxd6
+A blunder occurred on move: 17. ...Bf4, best move was: Nxd4
+A blunder occurred on move: 19. ...Bxc6, best move was: Bxd2
+A blunder occurred on move: 26. Qg5, best move was: Re1
+A blunder occurred on move: 28. Nc6, best move was: Nxg4
+A blunder occurred on move: 30. ...Qxc6, best move was: Kh8
+A blunder occurred on move: 32. ...Rc1+, best move was: Rcd6
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 31. ...Qa4, best move was: Nxg4
+A blunder occurred on move: 31. g5, best move was: Nb4
+A blunder occurred on move: 34. Rd4, best move was: Nc7
+A blunder occurred on move: 35. ...Qxa2, best move was: Bxd4
+A blunder occurred on move: 35. Rf4, best move was: Nf6+
+A blunder occurred on move: 36. ...Rxe3, best move was: Nd3
+Total blunders in game: 6
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 27. gxh4, best move was: g4
+A blunder occurred on move: 41. ...Kg7, best move was: a5
+A blunder occurred on move: 50. ...Rf3, best move was: Rxb3+
+A blunder occurred on move: 52. Bd5, best move was: Bxf5
+A blunder occurred on move: 53. ...Rf4, best move was: Re3
+A blunder occurred on move: 53. Kb6, best move was: Be6
+A blunder occurred on move: 57. ...Be3, best move was: f4
+A blunder occurred on move: 57. a6, best move was: Rxf5
+A blunder occurred on move: 58. ...Bf4, best move was: f4
+A blunder occurred on move: 58. Rb7, best move was: Rxf5
+A blunder occurred on move: 59. ...Rd2, best move was: Be3
+A blunder occurred on move: 59. Kb6, best move was: a7
+A blunder occurred on move: 62. ...Rd4, best move was: Rd8
+A blunder occurred on move: 62. Bd5, best move was: a8=Q
+A blunder occurred on move: 63. ...Re4, best move was: Rxd5+
+A blunder occurred on move: 63. Kc5, best move was: a8=Q
+A blunder occurred on move: 64. ...Re5, best move was: Re8
+A blunder occurred on move: 64. Kc6, best move was: a8=Q
+A blunder occurred on move: 65. ...Rxd5, best move was: Re8
+A blunder occurred on move: 66. Kc6, best move was: a8=Q
+A blunder occurred on move: 67. a8=Q, best move was: a8=Q
+A blunder occurred on move: 69. ...Ke2, best move was: Ke2
+A blunder occurred on move: 70. ...Kf2, best move was: f2
+A blunder occurred on move: 70. Kd5, best move was: Rf7
+A blunder occurred on move: 71. ...Ke2, best move was: Bc1
+A blunder occurred on move: 71. Kc4, best move was: Kc4
+A blunder occurred on move: 72. ...f2, best move was: Kd2
+A blunder occurred on move: 72. Qxe3+, best move was: Rf7
+A blunder occurred on move: 75. ...Kc1, best move was: Ke2
+A blunder occurred on move: 76. ...Kb1, best move was: Kd1
+A blunder occurred on move: 76. b4, best move was: Rxf2
+A blunder occurred on move: 77. ...Ka2, best move was: Kc1
+A blunder occurred on move: 77. Rd7, best move was: Rxf2+
+A blunder occurred on move: 78. ...Ka3, best move was: f1=Q
+A blunder occurred on move: 78. Rd1, best move was: Ra7#
+A blunder occurred on move: 79. ...Ka4, best move was: Ka4
+A blunder occurred on move: 79. Kc4, best move was: Kc4
+A blunder occurred on move: 80. ...Ka3, best move was: Ka3
+A blunder occurred on move: 80. b5, best move was: b5
+A blunder occurred on move: 81. ...Kb2, best move was: Kb2
+A blunder occurred on move: 81. Kc5, best move was: Rd2+
+A blunder occurred on move: 82. Ra1, best move was: Rf1
+A blunder occurred on move: 83. ...Kb2, best move was: Kd3
+A blunder occurred on move: 83. b6, best move was: Rf1
+A blunder occurred on move: 84. ...Kc2, best move was: Kxa1
+A blunder occurred on move: 84. Kc6, best move was: Rf1
+A blunder occurred on move: 85. b7, best move was: b7
+Total blunders in game: 47
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 8. ...Ne3, best move was: Nxc3
+A blunder occurred on move: 13. ...c6, best move was: Bxe5
+A blunder occurred on move: 13. Ne4, best move was: Bxf7+
+A blunder occurred on move: 14. ...Nxe4, best move was: Bxe5
+A blunder occurred on move: 15. ...Bxh2+, best move was: Bxh2+
+A blunder occurred on move: 15. Kxh2, best move was: Kh1
+A blunder occurred on move: 17. ...b5, best move was: Nf6
+A blunder occurred on move: 17. Ng5+, best move was: Nh6+
+A blunder occurred on move: 20. Nd6, best move was: Rf1
+A blunder occurred on move: 22. Nxf5, best move was: Ne8
+A blunder occurred on move: 23. Re3, best move was: d5
+A blunder occurred on move: 25. ...Kh8, best move was: Kg7
+A blunder occurred on move: 25. Rh3, best move was: Qe5+
+A blunder occurred on move: 36. ...Kh6, best move was: Kh8
+A blunder occurred on move: 36. Qh3#, best move was: Qh3#
+Total blunders in game: 15
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 12. ...Nxe5, best move was: Bg7
+A blunder occurred on move: 18. ...Kf8, best move was: Bxe5
+A blunder occurred on move: 24. ...Bd5, best move was: Rxh5
+A blunder occurred on move: 25. Qxh7+, best move was: Re2
+A blunder occurred on move: 32. ...Bf3, best move was: Rf5
+A blunder occurred on move: 37. Rf4, best move was: Rfd6
+A blunder occurred on move: 41. ...Rh6, best move was: Rxg5
+A blunder occurred on move: 41. f4, best move was: Rd5
+A blunder occurred on move: 42. Rb8, best move was: Rd5
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 11. ...b4, best move was: Qd6
+A blunder occurred on move: 13. ...Bf6, best move was: e5
+A blunder occurred on move: 14. ...Ra7, best move was: Bxd5
+A blunder occurred on move: 16. ...Kf8, best move was: Qxf7
+A blunder occurred on move: 16. Rd8+, best move was: Rd8+
+A blunder occurred on move: 17. ...Kg7, best move was: Kg7
+A blunder occurred on move: 17. Rg8+, best move was: Rg8+
+A blunder occurred on move: 18. ...Kh6, best move was: Rxg8
+A blunder occurred on move: 18. f8=Q+, best move was: f8=Q+
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 18. ...Bb3, best move was: Bd3
+A blunder occurred on move: 23. Rd1, best move was: Ra3
+A blunder occurred on move: 27. Nd5, best move was: c6
+A blunder occurred on move: 28. ...Re8, best move was: Qa1+
+A blunder occurred on move: 28. Nf6+, best move was: Nc3
+A blunder occurred on move: 35. ...Rc8+, best move was: Qb6+
+A blunder occurred on move: 36. ...Rc4+, best move was: Rd8+
+A blunder occurred on move: 36. Ke5, best move was: Ke5
+A blunder occurred on move: 37. ...Qb5+, best move was: Qb5+
+A blunder occurred on move: 37. Rd5, best move was: Kd6
+A blunder occurred on move: 38. ...Qe8+, best move was: Qe8+
+A blunder occurred on move: 38. Kd6, best move was: Kd6
+A blunder occurred on move: 39. ...Rc6#, best move was: Qe6#
+Total blunders in game: 13
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 31. Nb3, best move was: Nf1
+A blunder occurred on move: 37. ...Rc2, best move was: f4
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 23. ...h5, best move was: Nd2
+A blunder occurred on move: 23. Qd1, best move was: Bxe4
+A blunder occurred on move: 27. Bf3, best move was: Bxe4
+A blunder occurred on move: 28. ...Qh5, best move was: Nxc3
+A blunder occurred on move: 31. Bxf6+, best move was: Rxf6
+A blunder occurred on move: 33. ...Rc4, best move was: Rc5
+A blunder occurred on move: 34. ...Qh7, best move was: Qh7
+A blunder occurred on move: 38. ...Qh4, best move was: Qh4
+A blunder occurred on move: 39. ...Qe1+, best move was: Qe4+
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 23. Bg2, best move was: Bf3
+A blunder occurred on move: 33. ...Rd7, best move was: Re6
+A blunder occurred on move: 35. Bxe5, best move was: b5
+A blunder occurred on move: 54. ...Kf6, best move was: Kd5
+A blunder occurred on move: 58. ...Rd4+, best move was: e4
+A blunder occurred on move: 58. Kxg5, best move was: Kf5
+A blunder occurred on move: 59. ...Rxa4, best move was: e4
+A blunder occurred on move: 62. ...Kxd8, best move was: e4
+A blunder occurred on move: 71. ...Ke7, best move was: Kg8
+A blunder occurred on move: 71. h7, best move was: h7
+A blunder occurred on move: 72. ...Kd6, best move was: Kd6
+A blunder occurred on move: 72. h8=Q, best move was: h8=Q
+A blunder occurred on move: 73. ...Kc5, best move was: Kc6
+A blunder occurred on move: 73. Qd8, best move was: Qe5+
+A blunder occurred on move: 74. ...Kc4, best move was: Kb4
+A blunder occurred on move: 74. g7, best move was: Qf6
+A blunder occurred on move: 75. ...Kb3, best move was: Kb3
+A blunder occurred on move: 75. g8=Q+, best move was: g8=Q+
+A blunder occurred on move: 76. ...Kb4, best move was: Kc3
+A blunder occurred on move: 76. Qc8, best move was: Qa2
+A blunder occurred on move: 77. ...Kb5, best move was: Ka3
+A blunder occurred on move: 77. Qf7, best move was: Qgc4+
+A blunder occurred on move: 78. ...Ka5, best move was: Kb6
+A blunder occurred on move: 78. Qfb7, best move was: Qc5+
+A blunder occurred on move: 79. ...Ka4, best move was: Ka4
+A blunder occurred on move: 79. Qca8#, best move was: Qca8#
+Total blunders in game: 26
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 11. ...b6, best move was: c5
+A blunder occurred on move: 12. ...axb6, best move was: a5
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 24. ...h5, best move was: Ne5
+A blunder occurred on move: 29. Qg2, best move was: Rg5
+A blunder occurred on move: 31. Kd1, best move was: Kd1
+A blunder occurred on move: 39. Qxe3, best move was: Kd1
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 36. ...gxf4, best move was: Rde8
+A blunder occurred on move: 37. Rxe7+, best move was: Rxe7+
+A blunder occurred on move: 38. ...Kg8, best move was: Rf7
+A blunder occurred on move: 38. Rg7+, best move was: Rg7+
+A blunder occurred on move: 39. Rxg4+, best move was: Rxg4+
+A blunder occurred on move: 40. ...Kh7, best move was: Rf6
+A blunder occurred on move: 40. Rg7+, best move was: Rg7+
+A blunder occurred on move: 41. ...Kh8, best move was: Kh8
+A blunder occurred on move: 41. Rxc7+, best move was: Nxf4
+Total blunders in game: 9
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 13. Nxd6, best move was: Nf6+
+Total blunders in game: 1
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 34. ...h5, best move was: Ng5
+A blunder occurred on move: 34. Rg1, best move was: Qa4
+A blunder occurred on move: 35. ...Qh7, best move was: Ne7
+A blunder occurred on move: 36. a8=Q, best move was: Ncxd6
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 26. ...h5, best move was: f4
+A blunder occurred on move: 33. Rf7, best move was: Rd7
+Total blunders in game: 2
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 20. Bd3, best move was: Bd3
+A blunder occurred on move: 26. ...Bf5, best move was: Bf5
+A blunder occurred on move: 30. Qe7, best move was: Kh1
+A blunder occurred on move: 32. ...Nf8, best move was: Ne5
+A blunder occurred on move: 32. gxf5+, best move was: gxf5+
+A blunder occurred on move: 33. ...Kxf5, best move was: Kh5
+A blunder occurred on move: 33. Bd2, best move was: Qg7
+A blunder occurred on move: 34. ...Qb2, best move was: Qc7+
+A blunder occurred on move: 34. Qe2, best move was: Qe3
+A blunder occurred on move: 35. ...Qc2, best move was: Qxd4
+A blunder occurred on move: 40. ...Rc3, best move was: Rxa2
+A blunder occurred on move: 40. Qh5+, best move was: Qh5+
+A blunder occurred on move: 41. ...Kg8, best move was: Ng6
+A blunder occurred on move: 41. Qxd5+, best move was: Re7
+A blunder occurred on move: 44. ...Kf7, best move was: f5
+A blunder occurred on move: 44. Qe8+, best move was: Qe8+
+A blunder occurred on move: 45. ...Kg7, best move was: Kg8
+A blunder occurred on move: 45. Re7+, best move was: Re7+
+A blunder occurred on move: 46. ...Kh6, best move was: Kh6
+A blunder occurred on move: 46. Qxf8+, best move was: Qxf8+
+A blunder occurred on move: 47. ...Kg5, best move was: Kh5
+A blunder occurred on move: 47. Qg7+, best move was: Qg8+
+A blunder occurred on move: 48. ...Kf4, best move was: Kh5
+A blunder occurred on move: 48. Qg4#, best move was: Qg4#
+Total blunders in game: 24
+Evaluating Game: test_data/chess_com_games_2023-04-12 copy.pgn
+A blunder occurred on move: 20. Bg3, best move was: Bxe5
+A blunder occurred on move: 21. Qd3, best move was: Bxe5
+A blunder occurred on move: 22. ...Bf5, best move was: e4
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 31. ...Qc6, best move was: Rxe3
+A blunder occurred on move: 33. exd4, best move was: Rxd4
+A blunder occurred on move: 36. Qd2, best move was: d6
+A blunder occurred on move: 39. d6, best move was: Qxc3
+A blunder occurred on move: 40. Kd4, best move was: Kf4
+A blunder occurred on move: 41. ...Rc4+, best move was: Rc4+
+Total blunders in game: 6
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 52. Kf5, best move was: Kh5
+A blunder occurred on move: 53. ...Kd6, best move was: Rxf7+
+A blunder occurred on move: 67. ...Kxb2, best move was: Kb1
+A blunder occurred on move: 73. b8=Q, best move was: Bg8
+A blunder occurred on move: 74. ...Ke2, best move was: Ke2
+A blunder occurred on move: 74. Qf8, best move was: Qf4
+A blunder occurred on move: 75. ...Ke3, best move was: Ke3
+A blunder occurred on move: 75. Qf3+, best move was: Qf3+
+A blunder occurred on move: 76. ...Kd2, best move was: Kd2
+A blunder occurred on move: 76. Be4, best move was: Qf2+
+A blunder occurred on move: 77. ...Ke1, best move was: Ke1
+A blunder occurred on move: 77. Bd3, best move was: Bd5
+A blunder occurred on move: 78. ...Kd2, best move was: Kd2
+A blunder occurred on move: 78. Qe2+, best move was: Qf2+
+A blunder occurred on move: 79. ...Kc1, best move was: Kc1
+A blunder occurred on move: 79. Qc2#, best move was: Qc2#
+Total blunders in game: 16
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 19. ...Bxc6, best move was: bxc6
+A blunder occurred on move: 21. ...Bf5, best move was: a4
+A blunder occurred on move: 22. ...Be6, best move was: e6
+Total blunders in game: 3
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 12. Rh3, best move was: Ne4
+A blunder occurred on move: 18. f4, best move was: Qe4
+A blunder occurred on move: 29. ...Rxd6, best move was: Rb5
+A blunder occurred on move: 30. ...Rde6, best move was: Qd5
+A blunder occurred on move: 34. ...g5, best move was: Qc6
+A blunder occurred on move: 34. Qh3, best move was: Rh8+
+Total blunders in game: 6
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 5. Bf1, best move was: Nd3
+A blunder occurred on move: 10. ...Qg5, best move was: c6
+A blunder occurred on move: 12. ...Qd8, best move was: Nxf2
+A blunder occurred on move: 17. ...Qxd5, best move was: f5
+A blunder occurred on move: 21. ...h6, best move was: Ne8
+A blunder occurred on move: 21. Qf4, best move was: Qe4
+Total blunders in game: 6
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 13. Be2, best move was: Nd5
+A blunder occurred on move: 14. ...Ba6, best move was: Bb7
+A blunder occurred on move: 14. Ne4, best move was: Nd5
+A blunder occurred on move: 22. ...Raf8, best move was: Nd7
+A blunder occurred on move: 23. ...Rxf2, best move was: Bxe5
+Total blunders in game: 5
+Evaluating Game: test_data/chess_com_games_2023-04-12.pgn
+A blunder occurred on move: 47. Kd2, best move was: b5
+A blunder occurred on move: 53. Kc6, best move was: Ke5
+A blunder occurred on move: 56. c7, best move was: Kxa6
+A blunder occurred on move: 57. ...b1=Q+, best move was: b1=Q+
+A blunder occurred on move: 57. Kxa6, best move was: Kc8
+A blunder occurred on move: 58. ...Kd7, best move was: Kd7
+Total blunders in game: 6
+Evaluating Game: test_data/chess_com_games_2023-05-16.pgn
+A blunder occurred on move: 10. ...Qa5, best move was: dxe4
+A blunder occurred on move: 10. a3, best move was: Nb3
+A blunder occurred on move: 11. ...Bd7, best move was: Nxd4
+A blunder occurred on move: 13. ...Rc8, best move was: Na5
+Total blunders in game: 4
+Evaluating Game: test_data/chess_com_games_2023-05-16.pgn
+A blunder occurred on move: 4. ...Qg5, best move was: Nf6
+A blunder occurred on move: 5. ...Qxg2, best move was: Qh6
+A blunder occurred on move: 8. ...Ba5, best move was: Be7
+A blunder occurred on move: 8. Bg3, best move was: Bxf7+
+A blunder occurred on move: 11. ...Ke7, best move was: Kd8
+A blunder occurred on move: 11. Qxg4, best move was: Bxd6+
+A blunder occurred on move: 13. ...Nxd4, best move was: h6
+A blunder occurred on move: 13. Nd2, best move was: Bf2
+A blunder occurred on move: 33. ...a5, best move was: Ne4+
+A blunder occurred on move: 33. Rb5, best move was: Rxg7+
+A blunder occurred on move: 34. ...g6, best move was: Ne4+
+A blunder occurred on move: 34. Rxa5, best move was: Be7
+A blunder occurred on move: 37. ...h4, best move was: Rh1+
+A blunder occurred on move: 38. ...Kxf5, best move was: gxf5
+A blunder occurred on move: 40. Bg1, best move was: Ke2
+A blunder occurred on move: 42. ...h3, best move was: Kg4
+A blunder occurred on move: 43. Kg2, best move was: Bxh2
+A blunder occurred on move: 44. ...Ne4, best move was: hxg1=Q+
+A blunder occurred on move: 49. ...Nb1, best move was: Nc4+
+Total blunders in game: 19
+Evaluating Game: test_data/Szparu_vs_Jospem_2023.04.11.pgn
+A blunder occurred on move: 19. ...Qc7, best move was: Na4
+Total blunders in game: 1
