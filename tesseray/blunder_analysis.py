@@ -23,24 +23,31 @@ class GameInfo:
 
 def analyze_game(game_info: GameInfo):
     engine = chess.engine.SimpleEngine.popen_uci(game_info.stockfish_path)
-
     board = game_info.game.board()
     game_key = f'{game_info.file}-{game_info.game.headers["Event"]}-{game_info.game_num}'
     blunders = []
     previous_info = None
-
     time_control = game_info.game.headers.get("TimeControl", "")
     initial_time = int(time_control.split("+")[0]) if "+" in time_control else None
 
     for node in game_info.game.mainline():
+        if board.is_game_over():
+            break
+
         move = node.move
+        info = engine.analyse(board, chess.engine.Limit(depth=10))
 
         if previous_info is not None:
             best_move = previous_info["pv"][0]
-            best_score = previous_info["score"].relative.score() if previous_info["score"] else None
+            if previous_info["score"].is_mate():
+                best_score = -1e6 * previous_info["score"].relative.score(mate_score=1e6)
+            else:
+                best_score = previous_info["score"].relative.score()
 
-            info = engine.analyse(board, chess.engine.Limit(depth=15))
-            score = info["score"].relative.score() if info["score"] else None
+            if info["score"].is_mate():
+                score = -1e6 * info["score"].relative.score(mate_score=1e6)
+            else:
+                score = info["score"].relative.score()
 
             if game_info.blunder_definition == "bad_move":
                 if best_move != move and score is not None and best_score is not None and best_score - score > game_info.blunder_threshold:
@@ -51,13 +58,13 @@ def analyze_game(game_info: GameInfo):
                 pass
 
         board.push(move)
-        previous_info = engine.analyse(board, chess.engine.Limit(depth=15))
+        previous_info = info
 
     engine.quit()
     return game_key, blunders
 
+
 def get_timestamp(comment, initial_time):
-    # Extract the remaining time from the comment
     match = re.search(r'\[%clk\\n(\d+):(\d+):(\d+\.\d+)\]', comment)
     if match is None:
         return None
