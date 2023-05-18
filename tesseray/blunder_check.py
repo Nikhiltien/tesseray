@@ -64,7 +64,7 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
                 else:
                     move_notation = f"{move_number}. ...{node.board().san(move)}"
                 best_move_notation = node.board().san(best_move)
-                blunder_msg = f"A blunder occurred on move: {move_notation}, best move was: {best_move_notation}"
+                blunder_msg = f"??: {move_notation}, Best move: {best_move_notation}"
                 game_blunders.append(blunder_msg)
 
             node = next_node
