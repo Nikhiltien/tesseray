@@ -1,7 +1,7 @@
 import chess.engine
 import chess.pgn
 import os
-import multiprocessing
+import threading
 from datetime import datetime
 
 def write_to_log(log_dir, blunders):
@@ -15,57 +15,55 @@ def write_to_log(log_dir, blunders):
                 log_f.write(f"{blunder}\n")
             log_f.write(f"Total blunders in game: {len(blunders_list)}\n")
 
-def evaluate_game(pgn_file, stockfish_path, limit=150):
-    with open(pgn_file) as f:
+class GameEvaluator(threading.Thread):
+    def __init__(self, pgn_file, stockfish_path, limit=150):
+        super().__init__()
+        self.pgn_file = pgn_file
+        self.engine = chess.engine.SimpleEngine.popen_uci(stockfish_path)
+        self.limit = limit
+        self.result = None  # This will hold the result
+
+    def run(self):  # This is what's run when you call start()
         blunders = []
-
-        engine = chess.engine.SimpleEngine.popen_uci(stockfish_path)
-
         while True:
-            game = chess.pgn.read_game(f)
+            game = chess.pgn.read_game(self.pgn_file)
             if game is None:
                 break
 
             blunder_count = 0
             game_blunders = []
             node = game
-            game_header = f"Evaluating Game: {pgn_file}\n"
+            game_header = f"Evaluating Game: {self.pgn_file}\n"
 
             while not node.is_end():
                 next_node = node.variations[0]
                 move = next_node.move
 
                 # Evaluate the position before the move
-                result = engine.analyse(node.board(), chess.engine.Limit(depth=10))
+                result = self.engine.analyse(node.board(), chess.engine.Limit(depth=10))
                 score_before = result["score"].relative.score()
                 if score_before is None:
                     # Mate in x situation
                     score_before = (30000 if result["score"].relative.is_mate() else 0)
 
                 # Evaluate the position after the move
-                result = engine.analyse(next_node.board(), chess.engine.Limit(depth=10))
+                result = self.engine.analyse(next_node.board(), chess.engine.Limit(depth=10))
                 score_after = result["score"].relative.score()
                 if score_after is None:
                     # Mate in x situation
                     score_after = (30000 if result["score"].relative.is_mate() else 0)
 
-                if abs(score_before + score_after) > limit:
+                if abs(score_before - score_after) > self.limit:
                     blunder_count += 1
-                    move_number = (node.ply() + 1) // 2
-                    if node.board().turn:
-                        move_notation = f"{move_number}. {node.board().san(move)}"
-                    else:
-                        move_notation = f"{move_number}. ...{node.board().san(move)}"
-                    blunder_msg = f"A blunder occurred on move: {move_notation}"
+                    blunder_msg = f"A blunder occurred on move: {node.board().san(move)}"
                     game_blunders.append(blunder_msg)
-
                 node = next_node
 
-            blunders.append((game_header, game_blunders))
+            if blunder_count > 0:
+                blunders.append((game_header, game_blunders))
 
-        engine.quit()
-
-    return blunders
+        self.result = blunders
+        self.engine.quit()  # Remember to quit the engine when done
 
 if __name__ == "__main__":
     directory = 'test_data'
@@ -74,9 +72,10 @@ if __name__ == "__main__":
     log_dir = "logs"
     os.makedirs(log_dir, exist_ok=True)
 
-    # create a process pool and start evaluation
-    with multiprocessing.Pool() as pool:
-        results = pool.starmap(evaluate_game, [(pgn_file, stockfish_path) for pgn_file in pgn_files])
-
-    all_blunders = [blunder for result in results for blunder in result]
+    threads = [GameEvaluator(pgn_file, stockfish_path) for pgn_file in pgn_files]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()  # Wait for thread to complete
+    all_blunders = [blunder for thread in threads for blunder in thread.result]
     write_to_log(log_dir, all_blunders)

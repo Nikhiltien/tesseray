@@ -1,115 +1,78 @@
 import chess.engine
 import chess.pgn
 import os
-import logging
-import re
-import datetime
-from multiprocessing import Pool, cpu_count
-from dataclasses import dataclass
+import multiprocessing
+from datetime import datetime
 
-flag = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-os.makedirs('logs', exist_ok=True)
+def evaluate_game(pgn_file, stockfish_path, limit=150):
+    with open(pgn_file) as f:
+        log_dir = "logs"
+        os.makedirs(log_dir, exist_ok=True)
 
-logging.basicConfig(filename=f'logs/blunder_analysis_{flag}.log', level=logging.INFO, format='%(message)s')
+        engine = chess.engine.SimpleEngine.popen_uci(stockfish_path)
 
-@dataclass
-class GameInfo:
-    stockfish_path: str
-    blunder_threshold: int
-    file: str
-    game: chess.pgn.Game
-    game_num: int
-    blunder_definition: str
+        all_logs = []
 
-def analyze_game(game_info: GameInfo):
-    engine = chess.engine.SimpleEngine.popen_uci(game_info.stockfish_path)
-    board = game_info.game.board()
-    game_key = f'{game_info.file}-{game_info.game.headers["Event"]}-{game_info.game_num}'
-    blunders = []
-    previous_info = None
-    time_control = game_info.game.headers.get("TimeControl", "")
-    initial_time = int(time_control.split("+")[0]) if "+" in time_control else None
+        while True:
+            game = chess.pgn.read_game(f)
+            if game is None:
+                break
 
-    for node in game_info.game.mainline():
-        if board.is_game_over():
-            break
+            blunder_count = 0
+            blunders = []
+            
+            # Write the game's name at the top of the log
+            game_header = f"Evaluating Game: {pgn_file}\n"
+            all_logs.append(game_header)
 
-        move = node.move
-        info = engine.analyse(board, chess.engine.Limit(depth=10))
+            result = None
+            for node in game.mainline():
+                next_node = node.board().copy()
+                next_node.push(node.move)
 
-        if previous_info is not None:
-            best_move = previous_info["pv"][0]
-            if previous_info["score"].is_mate():
-                best_score = -1e6 * previous_info["score"].relative.score(mate_score=1e6)
-            else:
-                best_score = previous_info["score"].relative.score()
+                # Get the move in SAN format before making the move
+                san_move = node.board().san(node.move)
 
-            if info["score"].is_mate():
-                score = -1e6 * info["score"].relative.score(mate_score=1e6)
-            else:
-                score = info["score"].relative.score()
+                # If it's the first move, analyse the position
+                if result is None:
+                    result = engine.analyse(node.board(), chess.engine.Limit(depth=10))
 
-            if game_info.blunder_definition == "bad_move":
-                if best_move != move and score is not None and best_score is not None and best_score - score > game_info.blunder_threshold:
-                    timestamp = get_timestamp(node.comment, initial_time)
-                    blunders.append((board.fen(), move.uci(), best_move.uci(), score, timestamp))
-            elif game_info.blunder_definition == "evaluation_drop":
-                # define "evaluation_drop"
-                pass
+                score_before = result["score"].relative.score()
+                if score_before is None:
+                    # Mate in x situation
+                    score_before = (30000 if result["score"].relative.is_mate() else 0)
 
-        board.push(move)
-        previous_info = info
+                # Evaluate the next position
+                result = engine.analyse(next_node, chess.engine.Limit(depth=10))
 
-    engine.quit()
-    return game_key, blunders
+                score_after = result["score"].relative.score()
+                if score_after is None:
+                    # Mate in x situation
+                    score_after = (30000 if result["score"].relative.is_mate() else 0)
 
+                if abs(score_before - score_after) > limit:
+                    blunder_count += 1
+                    blunder_msg = f"A blunder occurred on move: {san_move}"
+                    blunders.append(blunder_msg)
 
-def get_timestamp(comment, initial_time):
-    match = re.search(r'\[%clk\\n(\d+):(\d+):(\d+\.\d+)\]', comment)
-    if match is None:
-        return None
-    else:
-        # Convert the time to seconds
-        hours, minutes, seconds = map(float, match.groups())
-        remaining_time = hours * 3600 + minutes * 60 + seconds
+            for blunder in blunders:
+                all_logs.append(f"{blunder}\n")
+            all_logs.append(f"Total blunders in game: {blunder_count}\n")
 
-        if initial_time is None:
-            return None
-        else:
-            # Calculate the time remaining as a percentage of the initial time
-            time_remaining = initial_time - remaining_time
-            time_remaining_percentage = (time_remaining / initial_time) * 100
-            return f"{time_remaining_percentage:.2f}%"
+        # Create a unique filename for the log
+        flag = datetime.now().strftime('%Y%m%d%H%M%S')
+        log_file = os.path.join(log_dir, f"blunder_check_{flag}.log")
 
-def find_blunders(pgn_dir_path, stockfish_path, blunder_definition="bad_move", blunder_threshold=150):
-    game_infos = []
-    
-    def load_games():
-        for root, _, files in os.walk(pgn_dir_path):
-            for file in files:
-                if file.endswith('.pgn'):
-                    pgn_file_path = os.path.join(root, file)
-                    with open(pgn_file_path) as pgn:
-                        game_num = 1
-                        while True:
-                            game = chess.pgn.read_game(pgn)
-                            if game is None:
-                                break
-                            
-                            yield GameInfo(stockfish_path, blunder_threshold, file, game, game_num, blunder_definition)
-                            game_num += 1
+        with open(log_file, 'a') as log_f:
+            log_f.writelines(all_logs)
 
-    with Pool(cpu_count()) as p:
-        blunders = dict(p.map(analyze_game, load_games()))
+        engine.quit()
 
-    return blunders
+if __name__ == "__main__":
+    directory = 'test_data'
+    pgn_files = [os.path.join(directory, file) for file in os.listdir(directory) if file.endswith('.pgn')]
+    stockfish_path = 'engines/stockfish'
 
-if __name__ == '__main__':
-    stockfish_path = "engines/stockfish"
-    pgn_dir_path = "test_data"
-    blunders = find_blunders(pgn_dir_path, stockfish_path, blunder_definition="bad_move")
-    for game, game_blunders in blunders.items():
-        logging.info(f"In game {game}, there were {len(game_blunders)} blunders.")
-        print(f"In game {game}, there were {len(game_blunders)} blunders.")
-        for blunder in game_blunders:
-            logging.info(f"FEN: {blunder[0]}, Actual Move: {blunder[1]}, Best Move: {blunder[2]}, Score: {blunder[3]}, Time Remaining: {blunder[4]}")
+    # create a process pool and start evaluation
+    with multiprocessing.Pool() as pool:
+        pool.starmap(evaluate_game, [(pgn_file, stockfish_path) for pgn_file in pgn_files])
