@@ -33,12 +33,12 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
 
                 # Evaluate the position after the move
                 result = engine.analyse(next_node.board(), chess.engine.Limit(depth=10))
-                score_after = result["score"].relative.score() * -1
+                score_after = result["score"].relative.score()
                 if score_after is None:
                     # Mate in x situation
-                    score_after = (30000 if result["score"].relative.is_mate() else 0) * -1
+                    score_after = (30000 if result["score"].relative.is_mate() else 0)
 
-                if abs(score_before - score_after) > limit:
+                if abs(score_before + score_after) > limit:
                     blunder_msg = f"A blunder occurred on move: {node.board().san(move)}"
                     print(blunder_msg)
 
