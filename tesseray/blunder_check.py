@@ -54,11 +54,10 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
                 # Mate in x situation
                 score_before = (30000 if result["score"].relative.is_mate() else 0)
 
-            # Find the top 3 moves before the blunder
+            # Find the best move before the blunder
             if best_move is None:
-                top_moves_result = engine.analyse(node.board(), chess.engine.Limit(depth=10, multipv=3))
-                top_moves = sorted(top_moves_result, key=lambda move_info: move_info["score"].relative.score(), reverse=True)
-                best_move = top_moves[0].move
+                best_move_result = engine.play(node.board(), chess.engine.Limit(depth=10))
+                best_move = best_move_result.move
 
             # Evaluate the position after the move
             result = engine.analyse(next_node.board(), chess.engine.Limit(depth=10))
