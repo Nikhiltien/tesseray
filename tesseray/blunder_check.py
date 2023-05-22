@@ -2,18 +2,26 @@ import chess.engine
 import chess.pgn
 import os
 import multiprocessing
+import csv
 from datetime import datetime
 
-def log_blunders(log_dir, all_blunders):
+def log_blunders(csv_dir, all_blunders):
     flag = datetime.now().strftime('%Y%m%d%H%M%S')
-    log_file = os.path.join(log_dir, f"blunder_check_{flag}.log")
+    csv_file = os.path.join(csv_dir, f"blunder_check_{flag}.csv")
 
-    with open(log_file, 'w') as log_f:
+    with open(csv_file, 'w', newline='') as csv_f:
+        writer = csv.writer(csv_f)
+        writer.writerow(["game_file", "game_id", "move_type", "move_number", "actual_move", "best_move"])
         for game_header, blunders_list in all_blunders:
-            log_f.write(game_header)
+            game_info = game_header.split(", Game ID: ")
+            game_file, game_id = game_info[0].split(": ")[1], game_info[1]
             for blunder in blunders_list:
-                log_f.write(f"{blunder}\n")
-            log_f.write(f"Total blunders in game: {len(blunders_list)}\n")
+                blunder_info = blunder.split(', Best move: ')
+                move_info = blunder_info[0].split(": ")
+                move_type, actual_move_full = move_info[0], move_info[1]
+                move_number, actual_move = actual_move_full.split('. ')
+                best_move = blunder_info[1]
+                writer.writerow([game_file, game_id, move_type, move_number, actual_move, best_move])
 
 def game_generator(pgn_file):
     with open(pgn_file) as f:
@@ -28,11 +36,12 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
 
     engine = chess.engine.SimpleEngine.popen_uci(stockfish_path)
 
+    game_id = 0  # Identifier for each game in a file
     for game in game_generator(pgn_file):
+        game_id += 1  
         game_blunders = []
         node = game
-        game_header = f"Evaluating Game: {pgn_file}\n"
-
+        game_header = f"Game File: {pgn_file}, Game ID: {game_id}\n"
         best_move = None
         while not node.is_end():
             next_node = node.variations[0]
@@ -45,10 +54,11 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
                 # Mate in x situation
                 score_before = (30000 if result["score"].relative.is_mate() else 0)
 
-            # Find the best move before the blunder
+            # Find the top 3 moves before the blunder
             if best_move is None:
-                best_move_result = engine.play(node.board(), chess.engine.Limit(depth=10))
-                best_move = best_move_result.move
+                top_moves_result = engine.analyse(node.board(), chess.engine.Limit(depth=10, multipv=3))
+                top_moves = sorted(top_moves_result, key=lambda move_info: move_info["score"].relative.score(), reverse=True)
+                best_move = top_moves[0].move
 
             # Evaluate the position after the move
             result = engine.analyse(next_node.board(), chess.engine.Limit(depth=10))
@@ -69,7 +79,10 @@ def evaluate_game(pgn_file, stockfish_path, limit=150):
 
             node = next_node
             best_move = None
-
+        
+        if len(game_blunders) == 0:
+            print(f"No blunders found in Game ID {game_id} from file {pgn_file}")
+        
         blunders.append((game_header, game_blunders))
 
     engine.quit()
@@ -88,11 +101,11 @@ if __name__ == "__main__":
     new_pgn_files = [os.path.join(directory, file) for file in new_pgn_files if file.endswith('.pgn')]
 
     stockfish_path = 'engines/stockfish'
-    log_dir = "logs"
-    os.makedirs(log_dir, exist_ok=True)
+    csv_dir = "csv"
+    os.makedirs(csv_dir, exist_ok=True)
 
     with multiprocessing.Pool() as pool:
         results = pool.starmap(evaluate_game, [(pgn_file, stockfish_path) for pgn_file in new_pgn_files])
 
     all_blunders = [blunder for result in results for blunder in result]
-    log_blunders(log_dir, all_blunders)
+    log_blunders(csv_dir, all_blunders)
